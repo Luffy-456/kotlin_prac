@@ -7,8 +7,8 @@ curl -s "https://get.sdkman.io" | bash
 sdk install kotlin
 ```
 
-for compiling 
+for compiling replace f_n with actual file name to run
 
 ```bash
-kotlinc basic.kt -include-runtime -d basic.jar && java -jar basic.jar
+kotlinc f_n.kt -include-runtime -d f_n.jar && java -jar f_n.jar
 ```
