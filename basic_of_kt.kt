@@ -127,6 +127,7 @@ fun main() {
 */
 
 
+/*
     // using if instead if ?.
 
         println("enter num: ")
@@ -170,7 +171,68 @@ fun main() {
         }
         println(out)
 
+*/
 
+    // arrays
+
+      /*
+        // normal 
+        // val a= intArrayOf(1,2,3,4)
+        // if val a= intArrayOf(1,2,3,4,5) == see below
+        val a=intArrayOf(1,2,3,4) + 5
+
+        println(a[0])
+        println(a.getOrNull(4))
+        println("\nenter idx, num of ele in array ${a.size}: ")
+        val idx=readln().toIntOrNull()
+        // if(idx != null && idx < a.size){ //or i can use
+        if(idx!=null && idx in a.indices) {
+            println("value at $idx : ${a.getOrNull(idx)} or ${a[idx]} ")
+        } else {
+            println("invalid idx")
+        }
+
+      */
+
+    // a little code
+        println("enter n , default is 0: ")
+        val n=readln().toIntOrNull() ?: 0
+
+       /* var i=0; var sum=0
+        /* while(i<n){
+            
+            println("enter #${i+1} :")
+            sum+=(readln().toIntOrNull() ?: 0) // will use 0 if invalid
+            // sum+=(readln().toIntOrNull() ?: continue) // will ask of that same num if invalid
+
+            i++
+        } */
+        
+        // or 
+
+        repeat(n){ i ->
+
+            println("enter #${i+1} :")
+            sum+=(readln().toIntOrNull() ?: 0)
+        }
+
+
+        println("sum of entered nums: $sum") */
+
+        // input list
+        var l = mutableListOf<Int>()
+
+        for(i in 0 until  n){
+            println("enter num at idx $i: ")
+            var ex=readln().toIntOrNull() ?: continue
+            l.add(ex)
+        }
+
+        // println("number in list : $l") 
+        //or similar to vector in c++ using for(int it: arr){}
+        for(x in l){
+            print("$x ")
+        } println()
 
 
 }
