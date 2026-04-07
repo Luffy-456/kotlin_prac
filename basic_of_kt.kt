@@ -103,7 +103,7 @@ fun main() {
     if value is int it will print the value otherwise null: 78
     */
 
-
+/*
     // using " ?. " this is called null safety 
 
     println("enter value for ?.inc() : ")
@@ -114,6 +114,7 @@ fun main() {
     val inputcheck= readln().toIntOrNull() ?.rem(2) ?.equals(0)
     println("?.rem(2) ?.equals(0) so is input is even : $inputcheck")
 
+
     /*other variations
 
         this one allows Boolean to be empty cause boolean can't be empty
@@ -123,5 +124,53 @@ fun main() {
         val inputcheck: Boolean = readln().toIntOrNull() ?.rem(2) ?.equals(0) ?: false
 
     */
+*/
+
+
+    // using if instead if ?.
+
+        println("enter num: ")
+        val input = readln().toIntOrNull()
+        /* if(input != null){
+            val out= if(input%2==0 && input>=10) {
+                "this num is even & >= 10"
+            } else if(input%2==0 && input<=10){
+                "this num is even & <=10"
+            } else {
+                "this num is odd"
+            }
+            println(out)
+        } else {
+            println("enter valid num!!")
+        } */
+
+        // compressed version below using when
+
+        /* if(input != null){
+            val out= when {
+
+                input%2==0 && input<=10 -> "this num is even & <= 10"
+                input%2==0 && input>=10 -> "this num is even & >= 10"
+                else -> "this num is odd"
+
+            }
+            println("$out") // or println(out)
+        } else {
+            println("dude enter valid num!!!")
+        } */
+        
+        // some more use cases
+
+        val out= when(input){
+            3-> "num is 3"
+            5-> "num is 5"
+            null -> "dude enter valid num!!!"
+            in 1..20 -> "num b/w 1 & 20"
+            else -> "idk what to print or num is >20"
+        }
+        println(out)
+
+
+
 
 }
