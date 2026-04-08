@@ -195,8 +195,8 @@ fun main() {
       */
 
     // a little code
-        println("enter n , default is 0: ")
-        val n=readln().toIntOrNull() ?: 0
+       // println("enter n , default is 0: ")
+      //  val n=readln().toIntOrNull() ?: 0
 
        /* var i=0; var sum=0
         /* while(i<n){
@@ -210,7 +210,7 @@ fun main() {
         
         // or 
 
-        repeat(n){ i ->
+       /* repeat(n){ i ->
 
             println("enter #${i+1} :")
             sum+=(readln().toIntOrNull() ?: 0)
@@ -222,7 +222,7 @@ fun main() {
         // input list
         var l = mutableListOf<Int>()
 
-        for(i in 0 until  n){
+        for(i in 0 until  n){ // for(i in 0 until lastIndex)
             println("enter num at idx $i: ")
             var ex=readln().toIntOrNull() ?: continue
             l.add(ex)
@@ -232,7 +232,50 @@ fun main() {
         //or similar to vector in c++ using for(int it: arr){}
         for(x in l){
             print("$x ")
-        } println()
+        } 
+        println() */
 
 
+
+        // function calling and passing
+        println("enter string: ")
+        val ab=readln()
+        reversedNoReturn(ab)
+        println(reversedReturn(ab))
+        
+        // using extention functions 
+        println("using extention fun: ")
+        println(ab.reverseAnotherWay())
+
+
+
+}
+
+// this Hello is default value if user passes nothing while calling the fun
+fun reversedNoReturn(stringToReverse: String="Hello"){ 
+    val ans=buildString{
+        for(i in stringToReverse.lastIndex downTo 0){
+            append(stringToReverse[i])
+        }
+    }
+    println(ans)
+}
+
+fun reversedReturn(stringToReverse: String="Hello"): String{
+    val ans=buildString{
+        for (i in stringToReverse.lastIndex downTo 0){
+            append(stringToReverse[i])
+        }
+    }
+    return ans
+}
+
+fun String.reverseAnotherWay(): String{
+    val ans=buildString{
+        for(i in this@reverseAnotherWay.lastIndex downTo 0){
+            append(this@reverseAnotherWay[i])
+        }
+    }
+    return ans
+    
 }
